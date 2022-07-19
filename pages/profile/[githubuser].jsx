@@ -1,6 +1,8 @@
 import {useContext, useEffect} from 'react'
 import {useRouter} from 'next/router'
 import {useGetReposAndData} from '../../hooks/useGetReposAndUser'
+import UserCard from '../../components/UserCard'
+import Layout from '../../components/Layout'
 
 const GithubUser = props => {
   const {user, loading, repos, dispatch, error} = useGetReposAndData()
@@ -11,12 +13,28 @@ const GithubUser = props => {
   if (error) {
     return <div>{error}</div>
   }
+  const {
+    name,
+    login,
+    avatar_url,
+    location,
+    bio,
+    blog,
+    html_url,
+    followers,
+    following,
+  } = user
+
   return (
-    <div>
-      <h1>{name}</h1>
-      <h2>{type}</h2>
-      {followers}
-    </div>
+    <Layout>
+      <UserCard
+        followers={followers}
+        following={following}
+        img={avatar_url}
+        name={login}
+        profile={true}
+      />
+    </Layout>
   )
 }
 
