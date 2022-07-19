@@ -9,19 +9,6 @@ const github = axios.create({
   },
 })
 
-// export const getUserAndRepos = async githubuser => {
-//   const [user, repos] = await Promise.all([
-//     github
-//       .get(`/users/${githubuser}`)
-//       .catch(err => (err.response ? err.response : '')),
-//     github
-//       .get(`/users/${githubuser}/repos`)
-//       .catch(err => (err.response ? err.response : '')),
-//   ])
-
-//   return {user: user.data, repos: repos.data}
-// }
-
 export const getUser = async githubuser => {
   const user = await github
     .get(`/users/${githubuser}`)
