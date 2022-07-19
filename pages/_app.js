@@ -1,10 +1,12 @@
-import '../styles/globals.css'
+import {ChakraProvider} from '@chakra-ui/react'
 import {GithubProvider} from '../context/GithubContext'
 function MyApp({Component, pageProps}) {
   return (
-    <GithubProvider>
-      <Component {...pageProps} />
-    </GithubProvider>
+    <ChakraProvider>
+      <GithubProvider>
+        <Component {...pageProps} />
+      </GithubProvider>
+    </ChakraProvider>
   )
 }
 

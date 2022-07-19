@@ -2,7 +2,6 @@ import {useState, useContext} from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
 import {getUser} from '../context/GithubAPI'
 import GithubContext from '../context/GithubContext'
 
@@ -51,7 +50,7 @@ export default function Home() {
 
   console.log('error', error)
   return (
-    <div className={styles.container}>
+    <div>
       <div>
         <form onSubmit={handleSubmit}>
           <div className="form-control">

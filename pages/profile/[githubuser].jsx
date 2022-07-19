@@ -8,7 +8,6 @@ const GithubUser = props => {
   const checkUserExist = Object.keys(user).length !== 0
   const router = useRouter()
   const {githubuser} = router.query
-  console.log(repos)
   const checkUserData = userData => {}
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const GithubUser = props => {
       const userData = checkUserExist ? user : await getUser(githubuser)
       const reposData = await getRepos(githubuser)
       if (
-        userData.user.message === 'Not Found' &&
+        userData.message === 'Not Found' &&
         reposData.repos.message === 'Not Found'
       ) {
         dispatch({
@@ -27,7 +26,7 @@ const GithubUser = props => {
         })
         return
       } else if (
-        userData.user.message === 'Bad credentials' &&
+        userData.message === 'Bad credentials' &&
         reposData.repos.message === 'Bad credentials'
       ) {
         dispatch({
@@ -62,7 +61,7 @@ const GithubUser = props => {
     public_gists,
     hireable,
   } = user
-
+  console.log('error', error)
   if (loading) {
     return <div>loading</div>
   }
