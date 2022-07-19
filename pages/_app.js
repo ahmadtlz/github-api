@@ -1,7 +1,11 @@
 import '../styles/globals.css'
-
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import {GithubProvider} from '../context/GithubContext'
+function MyApp({Component, pageProps}) {
+  return (
+    <GithubProvider>
+      <Component {...pageProps} />
+    </GithubProvider>
+  )
 }
 
 export default MyApp
