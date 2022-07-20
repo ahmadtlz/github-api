@@ -3,9 +3,10 @@ import {getUser} from '../context/GithubAPI'
 import GithubContext from '../context/GithubContext'
 import UserCard from './UserCard'
 
-export default function User({user}) {
+export default function User({user, profile = false}) {
   const checkUserExist = Object.keys(user).length !== 0
-  const {avatar_url, followers, following, login} = user
+  const {name, login, avatar_url, location, bio, blog, followers, following} =
+    user
   return (
     <>
       {checkUserExist ? (
@@ -14,6 +15,11 @@ export default function User({user}) {
           following={following}
           img={avatar_url}
           name={login}
+          realName={name}
+          bio={bio}
+          blog={blog}
+          location={location}
+          profile={profile}
         />
       ) : (
         <UserCard
@@ -22,6 +28,7 @@ export default function User({user}) {
           img={avatar_url}
           name={'search for user'}
           idle={true}
+          profile={profile}
         />
       )}
     </>
