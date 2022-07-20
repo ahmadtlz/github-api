@@ -18,7 +18,7 @@ export const getUser = async githubuser => {
 }
 export const getRepos = async githubuser => {
   const repos = await github
-    .get(`/users/${githubuser}/repos`)
+    .get(`/users/${githubuser}/repos?sort=author-date-asc`)
     .catch(err => (err.response ? err.response : ''))
   return {repos: repos.data}
 }
