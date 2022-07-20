@@ -1,11 +1,12 @@
 import React from 'react'
-import {Box, Spinner} from '@chakra-ui/react'
+import {Box, Center, Spinner} from '@chakra-ui/react'
 
 export default function Loading() {
   return (
     <Box
       py={6}
       h={'sm'}
+      width={'full'}
       display={'flex'}
       flexDir={'column'}
       justifyContent={'center'}
