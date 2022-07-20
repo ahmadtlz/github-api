@@ -17,6 +17,7 @@ const GithubUser = () => {
       px={0}
       width={'100%'}
       maxW={'100%'}
+      title={Boolean(user.login) ? user.login : '-'}
     >
       {loading ? (
         <Loading />

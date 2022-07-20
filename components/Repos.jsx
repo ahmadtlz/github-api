@@ -1,8 +1,6 @@
 import React from 'react'
 import ReposPagination from './ReposPagination'
 
-import {Center} from '@chakra-ui/react'
-
 export default function Repos({repos}) {
   const checkReposExist = Object.keys(repos).length !== 0
   const sortRepos = checkReposExist

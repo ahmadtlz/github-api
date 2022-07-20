@@ -22,11 +22,10 @@ export default function Pagination({repos}) {
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const currentItems = repos.slice(indexOfFirstItem, indexOfLastItem)
-  console.log(currentPage)
   const renderPageNumbers = pages.map(number => {
     if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
       return (
-        <ListItem px={1}>
+        <ListItem key={number} px={1}>
           <Button
             bg={number === currentPage ? '#5556fc' : ''}
             key={number}

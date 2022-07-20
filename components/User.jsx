@@ -1,6 +1,3 @@
-import {useState, useContext} from 'react'
-import {getUser} from '../context/GithubAPI'
-import GithubContext from '../context/GithubContext'
 import UserCard from './UserCard'
 
 export default function User({user, profile = false}) {

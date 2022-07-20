@@ -58,7 +58,7 @@ export default function ReposItem({data}) {
         width={['full', '800px']}
         gap={6}
       >
-        {data.map((repo, index) => {
+        {data.map(repo => {
           const {
             name,
             description,
@@ -68,11 +68,12 @@ export default function ReposItem({data}) {
             watchers_count,
             stargazers_count,
             updated_at,
+            id,
           } = repo
 
           return (
             <GridItem
-              key={index}
+              key={id}
               bg={'#0079ff'}
               textAlign={'center'}
               p={5}
